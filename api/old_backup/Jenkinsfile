@@ -1,0 +1,20 @@
+pipeline {
+  agent any
+
+  stages {
+        
+    stage('Install dependencies') {
+	
+      steps {
+		dir("api") 
+        bat 'npm install'
+      }
+    }
+     
+    stage('Done') {
+      steps {
+         echo 'Done'
+      }
+    }      
+  }
+}

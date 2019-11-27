@@ -1,0 +1,27 @@
+<h2>Company List</h2>
+<div class="text-right mb-3"> <button class="btn btn-primary pull-right" routerLink="/addCompany">Add Company</button>
+</div>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">CompanyName</th>
+      <th scope="col">Owner</th>
+      <th scope="col">Address</th>
+      <th scope="col">Status</th>
+      <th scope="col">Action</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let company of allCompany;let i =index">
+      <th scope="row">{{i+1}}</th>
+      <td>{{company.companyName}}</td>
+      <td>{{company.owner}}</td>
+      <td>{{company.address}}</td>
+      <td>{{company.companyStatus}}</td>
+      <button class="btn btn-primary" (click)="edit(company)">Edit</button> &nbsp;
+      <button class="btn btn-primary" (click)="delete(company)">Delete</button>
+    </tr>
+  </tbody>
+</table>
